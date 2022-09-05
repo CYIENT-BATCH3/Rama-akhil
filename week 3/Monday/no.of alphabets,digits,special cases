@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+   char word[50];
+   int i=0;
+   printf("enter the word");
+   scanf("%s",word);
+   int count=0,digit=0,special=0;
+   while(word[i]!='\0')
+   //for(i=0;i<=strlen(word);i++)
+   {
+       if((word[i]>='a'&&word[i]<='z')||(word[i]>='A'&&word[i]<='Z'))
+       {
+           count++;
+       }
+       else if((word[i]>='0'&&word[i]<='9'))
+       {
+           digit++;
+       }
+       else
+       {
+           special++;
+       }
+       i++;
+   }
+   printf("no of alphabets %d\n",count);
+   printf("no of digits %d\n",digit);
+   printf("no of special %d\n",special);
+   return 0;
+}
