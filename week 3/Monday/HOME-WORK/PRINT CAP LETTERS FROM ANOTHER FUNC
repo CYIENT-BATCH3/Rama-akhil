@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+
+   
+   
+   char strcap(char s[]){//function for logic
+   for (int i = 0; s[i]!='\0'; i++) {//loop to convert every char
+     if(s[i] >= 'a' && s[i] <= 'z') {//only conv small to cap ,
+         s[i] = s[i]-' ';//convertion
+      }
+   }
+ printf("the cap string is %s",s);//print
+  
+}
+int main() {//main function
+   char p[100];
+   printf("\nEnter a string : ");//message
+   scanf("%[^\n]s",p);//input
+ strcap(p);//function call
+}
