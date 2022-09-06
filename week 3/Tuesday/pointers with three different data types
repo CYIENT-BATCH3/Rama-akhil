@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main()
+{
+    int a=10;
+    float b=1.0;
+    char ch='A';
+    int *p;
+    float *f;
+    char *c;
+    p =&a;
+    f =&b;
+    c =&ch;
+    printf("%d %f %c",*p,*f,*c);
+    return 0;
+}
