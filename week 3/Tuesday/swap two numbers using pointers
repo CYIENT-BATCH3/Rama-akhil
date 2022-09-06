@@ -1,0 +1,18 @@
+#include <stdio.h>
+void swap(int *p,int *q)  //function declaration
+{
+    int temp;  //varaible declaration
+    temp=*p;
+    *p=*q;
+    *q=temp;
+    printf("%d %d",*p,*q); //giving the output to user
+}
+void main()   //main function
+{
+    int x,y,*p,*q;   //variable declaration
+    p=&x;            //assining the address of x to p
+    q=&y;           //assining the address of y to q
+    printf("enter the values");    //getting the values from user
+    scanf("%d %d",&*p,&*q);        //reading the given values from the user
+    swap(&x,&y);                  //function call
+}
