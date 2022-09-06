@@ -1,16 +1,16 @@
-#include <stdio.h>
+#include <stdio.h>    
 
-int main()
+int main()       //main function
 {
-    int a=10;
-    float b=1.0;
-    char ch='A';
+    int a=10;    //integer variable declaration
+    float b=1.0;  //float variable declaration
+    char ch='A';  //character variable declaration
     int *p;
     float *f;
     char *c;
-    p =&a;
-    f =&b;
-    c =&ch;
+    p =&a;       //storing adress of a in p
+    f =&b;       //storing adress of b in f
+    c =&ch;      //storing adress of ch in c
     printf("%d %f %c",*p,*f,*c);
     return 0;
 }
