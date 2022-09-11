@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+struct student{
+	float fees;
+	char name[20];
+};
+typedef struct student stud;
+int main(){
+	setbuf(stdout,NULL);
+	stud s1[20];
+	int n=0;
+	printf("enter the how may students :\n");
+	scanf("%d",&n);
+	printf("enter the name of student :\n");
+	for(int i=0;i<n;i++){
+   printf("enter name :\n");
+	scanf(" %s",s1[i].name);
+	printf("enter fees :\n");
+	scanf("%f",&s1[i].fees);
+	}
+    printf(" student 	-	fees\n");
+    for(int i=0;i<n;i++){
+    printf("%s 		-		%f\n",s1[i].name,s1[i].fees);}
+
+}
