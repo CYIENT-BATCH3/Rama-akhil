@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+
+struct company{//structure
+    int contact;//int var
+    char name[20];//char var
+    
+};
+int main()//main function
+{
+   struct company com;//creating a var for struct in main
+   printf("enter the contact number : ");
+   scanf("%d",&com.contact);//assign to struct var
+    printf("enter the name : ");
+   scanf("%s",&com.name);//assign to struct var
+   printf("the num is : %d\n the name is :%s",com.contact,com.name);//printing the values stored in struct
+   
+   
+}
