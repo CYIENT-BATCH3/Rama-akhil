@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<math.h>
+
+# define pi 3.14
+
+int main(){
+	setbuf(stdout,NULL);
+	float cone_h=0,cone_r=0,circle_r=0;
+	printf("enter the high and radius for cone :\n");
+	scanf("%f %f",&cone_h,&cone_r);
+	printf("enter the radius for circle :\n");
+		scanf("%f",&circle_r);
+	/*int area_cone = pi*cone_r*(cone_r+sqrt(hr));*/
+	float area_cone = pi*cone_r*(cone_r+sqrt((cone_h*cone_h)+(cone_r*cone_r)));
+	float area_circle = pi*circle_r*circle_r;
+	printf("\n the area of cone is : %f",area_cone);
+	printf("\n the area of circle is : %f",area_circle);
+
+
+}
