@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+
+struct company{//structure
+    long int contact;//int var
+    char name[20];//char var
+    float salary;
+    int emp_id;
+};
+int main()//main function
+{
+   struct company com[100];//creating a var for struct in main
+   int n=0;
+   printf("how many employees :\n");//asking home many employees
+   scanf("%d",&n);//writing how many numbers to var 
+  printf("enter the 'name' , 'contact number','salary','emp_id' :");//message to user
+  for(int i=0;i<n;i++){//reading from user depending on how many emp given
+      scanf("%s ",com[i].name);//name
+      scanf("%ld",&com[i].contact);//contactnum
+      scanf("%f",&com[i].salary);//salary
+      scanf("%d",&com[i].emp_id);//emp id
+      
+  }
+  printf("emp_id         name         contact         salary\n");//index
+  for(int i=0;i<n;i++){//printing
+     printf("%d         %s         %ld         %f\n",com[i].emp_id,com[i].name,com[i].contact,com[i].salary);//details
+  }
+}
