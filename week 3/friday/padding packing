@@ -1,0 +1,14 @@
+#include<stdio.h>
+
+# pragma pack(1)
+struct bit
+{
+	//char ch;
+	int a;
+	char ch1;
+	//float f ;
+
+}s1;
+int main(){
+	printf("the size is :%d",sizeof(s1));
+}
