@@ -1,0 +1,50 @@
+#include<stdio.h>
+
+struct gyroscope
+{
+	int x;
+	int y;
+	int z;
+};
+
+void main(){
+	setbuf(stdout,NULL);
+	struct gyroscope sensor1[40];//sensor gyroscope
+	int num,sumx=0,sumy=0,sumz=0;//local variables
+	printf("enter the how many values are going to use : ");
+	scanf("%d",&num);//num for loop
+	printf("enter the x and y and also z angle values of sensor please follow the sequence :\n");
+	for(int i=0;i<num;i++){//for reading
+		scanf(" %d",&sensor1[i].x);//reading x
+		scanf(" %d",&sensor1[i].y);//reading y
+		scanf(" %d",&sensor1[i].z);//reading z
+
+	}
+    for(int i=0;i<num;i++){//for sum
+    	sumx=sumx+sensor1[i].x;//sum of all values x
+    	sumy=sumy+sensor1[i].y;//sum of all values y
+    	sumz=sumz+sensor1[i].z;//sum of all values z
+    }
+//printing  sum of all values
+    printf("\n the sum of x is %d",sumx);
+    printf("\n the sum of y is %d",sumy);
+    printf("\n the sum of z is %d\n",sumz);
+if(sumx==100 &&sumy==250&&sumz==300){//checking condition for left
+	printf("\n the vehicle position is 'LEFT' ");
+}
+else if(sumx==300 &&sumy==250&&sumz==100){//checking condition for right
+	printf("\n the vehicle position is 'RIGHT' ");
+}
+else if(sumx==100 &&sumy==100&&sumz==300){//checking condition for forward
+	printf("\n the vehicle position is 'FORWARD' ");
+}
+else if(sumx==250 &&sumy==800&&sumz==200){//checking condition for backward
+	printf("\n the vehicle position is 'BACKWARD' ");
+}
+else{
+	printf("\n sensor values are not matching..");//non of the above print some message
+}
+
+
+
+}
