@@ -1,0 +1,18 @@
+#include <stdio.h>           //including headerfile
+#include<string.h>          //including headerfile
+void func(int *a,char *b[20],float *c);    //function declaration
+int main()                             //main function
+{
+	setbuf(stdout,NULL);
+	int a;                  //declaring variable of type int
+	char b[10];             //declaring variable of type char
+	float c;                //declaring variable of type float
+	printf("enter the values");     //enter the values using printf
+	scanf("%d %s %f",&a,b,&c);      //taking the inputs from user
+	func(&a,b,&c);                      //function call
+	return 0;
+}
+void func(int *a,char *b[20],float *c)      //function defination
+{
+	printf("%d %s %f",*a,b,*c);        //printing the values
+}
