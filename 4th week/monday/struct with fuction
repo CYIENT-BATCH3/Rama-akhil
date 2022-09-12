@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+struct employee
+{
+	int id;
+	char name[10];
+	float sal;
+};
+void details(struct employee *s);       //declaring function
+int main()
+{
+	setbuf(stdout,NULL);
+	struct employee *s;
+	s->id=123;
+	strcpy(s->name,"akhil");
+	s->sal=3.5;
+	details(&s);
+	return 0;
+}
+void details(struct employee *s)
+{
+	printf("%d %s %f",s->id,s->name,s->sal);
+}
