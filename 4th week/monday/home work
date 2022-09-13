@@ -1,0 +1,30 @@
+#include <stdio.h>      //including header file
+struct numbers//declaring structure
+{
+    int num1;//declaring variable
+    float num2;//declaring variable
+    float add,diff;//declaring float data type
+    
+}s1;
+   struct number func(struct number s1);//functiont declaration 
+   struct number func1(struct number s1);//functiont declaration 
+   int main()
+{
+    printf("enter two numbers");            //getting input from user
+    scanf("%d %d",&s1.num1,&s1.num2);       //reading  inputs
+    s1=func(s1);                               //function call pass by value 
+    s1=func1(s1);
+    printf("\nsum of two numbers = %d",s1.add);         //printing output 
+    printf("\ndifference of two numbers = %d",s1.sub);     //printing output 
+    return 0;  
+} 
+struct number func(struct number s1 )//defining function
+{
+    s1.add=s1.num1+s1.num2;//finding sum
+    return s1;       //returning s1 to function call
+}
+struct number func1(struct number s1)//defining function
+{
+    s1.sub=s1.num1-s1.num2;//finding sum
+    return s1;      //returning s1 to function call
+}
