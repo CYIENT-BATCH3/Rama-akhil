@@ -1,0 +1,30 @@
+#include <stdio.h>
+struct number//structure declaration
+{
+    int num1;//variable declaration
+    int num2;//variable declaration
+    int  add,sub;//variable declaration
+    
+}s1;
+int func(struct number *s1 );//declaration function
+int func1(struct number *s1 );//declaration function
+int main()
+{
+ printf("enter two number :");      //getting input from user
+ scanf("%d %d",&s1.num1,&s1.num2);  //reading the given input
+ s1.add = func(&s1);            //function call ,call by referance
+ s1.sub = func1(&s1);           //function call ,call by referance
+ printf("addition = %d\n",s1.add);      //printing output
+ printf("subtraction = %d",s1.sub);     //printing output
+ return 0;
+}
+int func(struct number *s1 )//defining function
+{
+    s1->add=s1->num1+s1->num2;//finding sum
+    return s1->add;       //returning s1 to function call
+}
+int func1(struct number *s1)//defining function
+{
+    s1->sub=s1->num1-s1->num2;//finding sum
+    return s1->sub;      //returning s1 to function call
+}
