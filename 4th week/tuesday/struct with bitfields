@@ -1,0 +1,13 @@
+#include<stdio.h>
+struct date
+{
+	unsigned int d : 5;       //declaring the variable d of integer type 
+	unsigned int m : 4;       //delaring  the variable m of integer type
+	unsigned int y;           //declaring the variable of integer type
+};
+int main()  
+{
+	struct date dt={31,12,2014};         //assigning the values 
+	printf("%d %d %d",dt.d,dt.m,dt.y);   //printing the values
+	return 0;
+}
