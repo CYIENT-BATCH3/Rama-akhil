@@ -1,0 +1,16 @@
+#include <stdio.h>
+#pragma pack(1)
+struct student
+{
+    int a;
+    float b;
+    char c;
+}s;
+void main()
+{
+printf("%d\n",sizeof(s.a));
+printf("%d\n",sizeof(s.b));
+printf("%d\n",sizeof(s.c));
+printf("%d\n",sizeof(s));
+
+}
