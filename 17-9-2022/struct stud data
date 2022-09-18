@@ -1,0 +1,21 @@
+#include<stdio.h>
+struct student_database{//structure declaration
+	int stu_id;//declaring the variable
+	char stu_name[30];
+		int stu_age;
+};
+int main(){
+	struct student_database s1[5];//defining the array of structure
+	int i;
+	printf("enter data\n");
+	for(i=0;i<5;i++){//loop for
+	    printf("enter the id:");
+	scanf("%d",&s1[i].stu_id);//reading student id
+	 printf("enter the name:");
+	scanf("%s",s1[i].stu_name);//reading student name
+	 printf("enter the age:");
+	scanf("%i",&s1[i].stu_age);//reading student age
+	}
+	for(i=0;i<5;i++)
+	printf("ID-%d\tNAME-%s\tSALARY-%d\t\n",s1[i].stu_id,s1[i].stu_name,s1[i].stu_age);
+}
