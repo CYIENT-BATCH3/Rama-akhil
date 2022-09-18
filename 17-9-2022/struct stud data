@@ -1,5 +1,13 @@
+//WAP to create a structure:student database (i.e. stud_id,stud_name,stud_age
+ALGORITHM:
+1.progarm to get 5 student data at a time using structures.
+2.declare structure and inside structure declare some variables.
+3.then in main function using array concept to get 5 student data.
+4.take for loop for iteration to print one by one data.
+5.print all the 5 student data.
+6.stop.
 #include<stdio.h>
-struct student_database{//structure declaration
+struct student_database{//structure declaration     
 	int stu_id;//declaring the variable
 	char stu_name[30];
 		int stu_age;
