@@ -1,0 +1,20 @@
+//WAP to find square of an number using macro?
+//ALGORITM:
+1.start
+2.program to find square of number using macro.
+3.define the macro to find square.
+4.in main function take one integer variable and print the square of that variable.
+5.stop
+
+#include<stdio.h>
+
+#define sqaure(c)  c*c					//macro function for the square of the number
+
+int main()
+{
+	setbuf(stdout,NULL);			//for compiler 
+	int number ;
+	printf("\n enter the number : ");		//take user input
+	scanf("%d",&number);
+	printf("square = %d",square(number));			//call macro function and 
+}
