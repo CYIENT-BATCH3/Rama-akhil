@@ -1,0 +1,164 @@
+/***************************************************************************************
+output :
+enter the number :14
+enter  position to setting,clearing,toggling,testing,extracting and monitoring bits : 3
+
+LSB to MSB : 
+given input decimal number to binary : 01110000
+
+SETTING A BIT : 1
+CLEARING A BIT : 01100000
+TOGGLING ALL BIT : 10001111
+TOGGLING  3 BIT : 01110000
+LED LIGHT STATUS : ON
+Extracting  a bit :
+3 bit is 1
+Monitoring a bit :
+0 : flag is not set
+1 : flag is set
+2 : flag is set
+3 : flag is set
+4 : flag is not set
+5 : flag is not set
+6 : flag is not set
+7 : flag is not set
+ ********************************************************************************************/
+#include <stdio.h>		//including header file
+void given(int num)		//function define
+{
+	printf("\n");           //printing new line
+	printf("given input decimal number to binary : ");		//printing information
+	for(int i=0;i<8;i++)				//looping
+	{
+		if(num&(1<<i))					//condition checking using AND(&) operator and left shift operator
+		{
+			printf("1");				//if condition true printing 1
+		}
+		else
+		{
+			printf("0");				//if condition false printing 0
+		}
+	}
+}
+void set(int num, int pos)				//function define
+{
+	printf("\n");                   //printing new line
+	printf("SETTING A BIT : ");     //printing information
+	if (num & (1<<pos))						//condition checking using AND(&) operator and left shift operator
+		{
+			printf("1");					//if condition true printing 1
+		}
+		else
+		{
+			printf("0");					//if condition false printing 0
+		}
+}
+void clearing(int num,int pos)			//function define
+{
+	int binary1 = num & (~(1<<pos));	//declaring variable and using   AND(&) operator ,complement(~)and left shift operator(<<)
+										//clearing an an particular it to 1 t0 0 and 0 to 0
+	printf("\n");						//printing new line
+	printf("CLEARING A BIT : ");		//printing information
+
+	for(int i=0;i<8;i++)				//loop
+	{
+	if (binary1 & (1<<i))				//condition checking using AND(&) operator and left shift operator
+			{
+				printf("1");			//if condition true printing 1
+			}
+			else
+			{
+				printf("0");			//if condition false printing 0
+			}
+	}
+}
+void all_bit(int num)					//function define
+{
+	printf("\n");						//printing new line
+	printf("TOGGLING ALL BIT : ");		//printing information
+	for(int i=0;i<8;i++)				//loop
+	{
+	if (num &(1<<i))					//condition checking using AND(&) operator and left shift operator
+			{
+				printf("0");			//if condition true printing 0
+			}
+			else
+			{
+				printf("1");			//if condition false printing 1
+			}
+	}
+}
+void toggling(int num,int pos)			//function define
+{
+	int binary2 = (num | (1<<pos));		//declaring new variable binary2  and using  OR(|) operator and left shift operator(<<)
+										                //clearing particular bit to 1 t0 0 and 0 to 1
+	printf("\nTOGGLING  %d BIT : ",pos);      //printing information
+	for(int i=0;i<8;i++)				//loop
+	{
+	if (binary2 & (1<<i))				//condition checking using AND(&) operator and left shift operator
+			{
+				printf("1");			//if condition true printing 1
+			}
+			else
+			{
+				printf("0");			//if condition false printing 0
+			}
+	}
+}
+void led(int num,int pos)					//function define
+{
+	if(num&(1<<pos))							//condition checking using AND(&) operator and left shift operator
+	{
+		printf("\nLED LIGHT STATUS : ON ");		//if condition true printing ON
+	}
+	else
+	{
+		printf("\nLED LIGHT STATUS : OFF");		//if condition false printing OFF
+	}
+}
+void extract(int num,int pos)					//function define
+{
+	   printf("\nExtracting  a bit : ");    //printing information
+		if(num&(1<<pos))						//condition checking using AND(&) operator and left shift operator
+			{
+			printf("\n%d bit is 1",pos);    //if condition true printing bit is 1
+			}
+		else
+		{
+			printf("\n%d bit is 0",pos);    //if condition true printing bit is 0
+		}
+}
+void monitoring(int num)							//function define
+{
+	printf("\nMonitoring a bit : ");				//printing information
+	for(int i=0;i<8;i++)							//loop
+	{
+		if(num & (1<<i))							//condition checking using AND(&) operator and left shift operator
+		{
+			printf("\n%d : flag is set",i);			//if condition true printing flag is set
+		}
+		else
+		{
+			printf("\n%d : flag is not set",i);		//if condition false printing flag is not set
+		}
+	}
+}
+int main()										//main function
+{
+	setbuf(stdout,NULL);
+  printf("LSB to MSB : ");
+	int num,pos;								          //declaring two variable
+	printf("enter the number :");			    //printing to user  to enter value
+	scanf("%d",&num);							        //reading the given input
+	printf("enter bit to setting,clearing,toggling,testing,extracting and monitoring bits : ");				//printing to user  to enter the position of bit
+	scanf("%d",&pos);							        //reading the input
+	given(num);									          //function call
+	set(num,pos);								          //function call
+	clearing(num,pos);							      //function call
+	all_bit(num);								          //function call
+	toggling(num,pos);							      //function call
+	led(num,pos);								          //function call
+	extract(num,pos);							        //function call
+	monitoring(num);							        //function call
+	return 0;
+}
