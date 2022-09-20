@@ -1,0 +1,36 @@
+Write a C program to read a file and print the content in cansole.
+Algorithm:
+1.start
+2.create a text file to read the content.
+3.copy the path of text file and print it here.
+4.use fopen command and 'r' command to open the file and read the file.
+5.read till the end of character in the text file.
+6.print the chararcters in the output cansole.
+7.stop.
+
+code: 
+
+#include<stdio.h>  //header file for i/p operations
+#include<stdlib.h>//including stdlib.h
+int main()  //main function
+{
+      setbuf(stdout,NULL);   //clears cache and prints the output
+      char ch;//declaring variable
+      FILE *fp=fopen("abcd.txt","r");//declaring file pointer and assigning a file to it
+      ch=fgetc(fp);       //assigning character from file
+      printf("%c",ch);   //printning character
+      if(fp==NULL)     //checking the value of pointer
+{
+printf("file not found");
+exit(1);//terminating from the program if an error occurs
+}
+
+while(ch != EOF)//iterates upto EOF
+{
+	ch=fgetc(fp);//assigning character from file
+
+	printf("%c",ch);//printning character
+}
+fclose(fp);//closing the file
+
+}
