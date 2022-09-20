@@ -1,0 +1,37 @@
+Write a C program to perform file handling methods like writing the file,closing the file. 
+
+Algorithm:
+1.statrt.
+2.Create a text file to open the file in the cansole window.
+3.use fopen command to open the file and use 'w' command to write a any information in the cansole.
+4.check the text file if the entered information is updated or not.
+5.stop.
+
+Code:
+
+#include <stdio.h>  //header file
+void main()  //main function
+{
+    setbuf(stdout,NULL);
+    FILE *fp;   //file data type is used for file handling
+    int id;   //initialize a integer variable
+    char name[30];  //give char name
+    float salary;   //salary in float data type
+    fp = fopen("abc.txt", "w");  //fopen is used to open a file and write file handling is used here
+    if (fp == NULL)   //if the file path is not correct prints the below statement.
+    {
+        printf("File does not exists \n");
+        return;
+    }
+    //if the file is found perform the below operations.
+    printf("Enter the id\n");
+    scanf("%d", &id);   //reads the id from user
+    fprintf(fp, "Id= %d\n", id);  //this function is just like printf, except that the output is written to the stream stream instead of stdout.
+    printf("Enter the name \n");
+    scanf("%s", name);
+    fprintf(fp, "Name= %s\n", name);
+    printf("Enter the salary\n");
+    scanf("%f", &salary);
+    fprintf(fp, "Salary= %.2f\n", salary);
+    fclose(fp);//closes the file.
+}
