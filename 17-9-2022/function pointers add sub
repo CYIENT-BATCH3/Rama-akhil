@@ -1,0 +1,37 @@
+Write a C program using function pointer for i)add function ii)sub function
+
+Algorithm:
+1.start.
+2.declare two functions like add and sub.
+3.initialize two numbers and get the values from user.
+4.call the two functions in main function.
+5.perform the two function declaration operations.
+6.stop.
+
+code:
+
+#include<stdio.h>  //header file
+void addition(int *add1,int *add2);  //function definition
+void subraction(int *sub1,int *sub2);  //function definition
+int main()  //main function
+{
+        setbuf(stdout,NULL);  //used to clear cache and prints the output in cansole
+	int num1,num2;        //initialize two variables
+	printf("enter the numbers:");   //prints the statement
+	scanf("%d %d",&num1,&num2);   //gets the value from user
+	addition(&num1,&num2);   //function calling
+	subraction(&num1,&num2);//function calling
+        return 0;  
+}
+void addition(int *add1,int *add2)   //function definition
+{
+	int add;
+	add=*add1+*add2;   //arithmatic operations for adding two numbers
+	printf("\nthe sum of two number  %d+%d=%d",*add1,*add2,add);  //prints the result
+}
+void subraction(int *sub1,int *sub2)   //function definition
+{
+	int sub;
+       	sub=*sub1-*sub2;  //arithmatic operation for subraction 
+	printf("\nthe sub of two numbers is %d-%d=%d",*sub1,*sub2,sub);  //prints the result
+}
